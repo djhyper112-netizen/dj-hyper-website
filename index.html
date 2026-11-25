@@ -226,6 +226,64 @@ DJ HYPER is a talented and energetic Ghanaian DJ with a passion for delivering u
 
 
 <section class="booking" id="booking">
+<section id="booking-form">
+  <h2 class="section-title">BOOK DJ HYPER</h2>
+
+  <div class="card">
+    <form onsubmit="sendBooking(event)">
+
+      <input type="text" id="clientName"
+        placeholder="Your Full Name" required>
+
+      <input type="tel" id="clientPhone"
+        placeholder="Your Phone Number" required>
+
+      <input type="text" id="eventType"
+        placeholder="Type of Event" required>
+
+      <input type="date" id="eventDate" required>
+
+      <input type="text" id="eventLocation"
+        placeholder="Event Location" required>
+
+      <textarea id="eventMessage"
+        placeholder="Additional Message"></textarea>
+
+      <button type="submit" class="btn">
+        SUBMIT BOOKING
+      </button>
+
+    </form>
+  </div>
+</section>
+
+<script>
+function sendBooking(event) {
+  event.preventDefault();
+
+  const name = document.getElementById("clientName").value;
+  const phone = document.getElementById("clientPhone").value;
+  const type = document.getElementById("eventType").value;
+  const date = document.getElementById("eventDate").value;
+  const location = document.getElementById("eventLocation").value;
+  const message = document.getElementById("eventMessage").value;
+
+  const text = `DJ HYPER BOOKING REQUEST
+Name: ${name}
+Phone: ${phone}
+Event: ${type}
+Date: ${date}
+Location: ${location}
+Message: ${message}`;
+
+  window.open(
+    "https://wa.me/233552325190?text=" +
+    encodeURIComponent(text),
+    "_blank"
+  );
+}
+</script>
+
 
 <h2 class="section-title">BOOK DJ HYPER</h2>
 
